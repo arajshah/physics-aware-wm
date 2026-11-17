@@ -11,6 +11,14 @@ golden `_6d_cam{id}.txt` pose).
 > below. Builds on [PERCEPTION.md](PERCEPTION.md) and
 > the worked example is
 > [RIGID_PIPELINE.md](RIGID_PIPELINE.md) + `examples/push_real2sim/`.
+>
+> Repository note (2026-11-16): the harness named later in this file,
+> `scripts/validate_rigid_pipeline.py`, is absent from this branch. The numbers
+> under **Results** are the 2026-06-22 RTX 5090 record. They were not remeasured
+> in the November teammate audit. A later execution log for the committed
+> example is on Brown at `results/rigid_0103.log` (NVIDIA L40,
+> `RIGID_PIPELINE_OK`, peak 18.74 GB). Setup and what was rechecked on
+> 2026-11-16 are in [TEAM_HANDOFF.md](TEAM_HANDOFF.md).
 
 ## Prerequisite gate — FoundationPose weights (to be provided)
 

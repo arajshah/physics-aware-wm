@@ -234,3 +234,11 @@ __marimo__/
 
 # in-repo copies of external model repos (built locally, not tracked)
 external/
+
+# Generated experiment outputs (grids, checkpoints, logs, perception dumps).
+# Summaries that belong in Git live under docs/results/.
+# Inventory: docs/BROWN_ARTIFACT_MANIFEST.md
+/results/
+
+# MuJoCo runtime log written into the repo root
+/MUJOCO_LOG.TXT

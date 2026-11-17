@@ -15,6 +15,16 @@ simulated rollouts, and iteratively refines the plan in a physically grounded wa
 (**propose → rollout → verify ↔ regress**), across rigid-push / rope / dough /
 sweep tasks.
 
+## This fork (`phino-physics-experiments`)
+
+Teammates cloning [arajshah/simpact](https://github.com/arajshah/simpact) should
+start with [docs/TEAM_HANDOFF.md](docs/TEAM_HANDOFF.md). That page is the
+fresh-clone setup, the one committed rigid example, and the checks run on
+2026-11-16. Large grids, datasets, and checkpoints stay on the Brown checkout.
+Their inventory is [docs/BROWN_ARTIFACT_MANIFEST.md](docs/BROWN_ARTIFACT_MANIFEST.md).
+Research status for the PHINO experiments is
+[docs/phino_cursor_handoff.md](docs/phino_cursor_handoff.md).
+
 ## Results — bundled reference runs
 
 One committed, **independently re-verified** run per task (`examples/*/<trial>/runs/`);

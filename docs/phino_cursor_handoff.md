@@ -14,6 +14,7 @@ Build a reproducible bridge between simulated controlled rigid-object interactio
 - PHINO upstream: `Hongyang-Du/phino`; user's fork: **`arajshah/phino`**, branch **`main`**. Existing PHINO `train/`, `scripts/`, and `configs/` implement the intended data reader, normalizer, image renderer, and DINOv2-B/14 trainer.
 - Brown server's SIMPACT working directory: `/nbu/people/ashah264/simpact` (same tree as `/cs/local/nbu/people/ashah264/simpact`). PHINO is at `/nbu/people/ashah264/phino`, checked out on `eval/grouped-physics-probes-oct28` (`3f1134d`); its contrastive loader is identical to `main`. Python environment: the SIMPACT uv `.venv` has MuJoCo 3.9, torch, and torchvision; rendering uses `MUJOCO_GL=egl` on a GPU node.
 - Existing **generated results are on Brown, NOT in GitHub**. A remote/cloud Cursor Agent cloning GitHub will not automatically see `results/phino_mesh_grid_cutoff_1m_v1/` or local MuJoCo assets. Use local/SSH-enabled execution for real data or a small deterministic synthetic fixture for cloud work. Do not upload entire datasets/checkpoints to Git just to supply the agent.
+- Fresh-clone setup for teammates: [`docs/TEAM_HANDOFF.md`](./TEAM_HANDOFF.md). File-level inventory of the Brown-only trees: [`docs/BROWN_ARTIFACT_MANIFEST.md`](./BROWN_ARTIFACT_MANIFEST.md). `/results/` is gitignored so that tree is not committed by accident.
 - Two source repos are separate. Use relative links and explicit `--phino-root`/repo paths. Do not assume PHINO appears as a submodule of SIMPACT.
 
 ## Existing simulation results (do not regenerate them now)
