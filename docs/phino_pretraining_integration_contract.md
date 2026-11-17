@@ -1,6 +1,6 @@
 # SIMPACT → PHINO pretraining: verified data contract and next step
 
-**Status:** Code inspection only, November 5, 2026. No PHINO/DINOv2 training has been performed on the SIMPACT dataset. This is an exploratory synthetic dynamics dataset, not measured real-world physics.
+**Status:** Schema contract, November 5, 2026. This page describes the static-image export. It is not the action-conditioned training result. Later clip training on `data/phino_simpact_v3obs_v2` is recorded in `docs/phino_experiment_log.md` and summarized in the README. The labels here are simulator assignments, not measured physics.
 
 ## Actual code paths inspected
 

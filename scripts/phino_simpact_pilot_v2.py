@@ -44,6 +44,8 @@ from typing import Any
 
 import numpy as np
 
+from phino_paths import default_phino_root
+
 # These schedules were chosen from the Nov 5, 2026 action diagnostics.
 # Every object/configuration receives IDENTICAL external forces and durations.
 # No action is conditioned on the object's hidden mass or friction.
@@ -509,8 +511,7 @@ def main() -> None:
     # Use a distinct output directory so the successful nominal pilot is preserved.
     ap.add_argument("--output-dir", type=Path, default=None,
                     help="Default: grid_v1 for one scene, multi_object_grid_v1 for multiple scenes")
-    ap.add_argument("--phino-root", type=Path,
-                    default=Path("/nbu/people/ashah264/phino"))
+    ap.add_argument("--phino-root", type=Path, default=default_phino_root())
     ap.add_argument("--masses", type=parse_levels, default=[0.25, 0.30, 0.35],
                     help="Comma-separated kg values; default 0.25,0.30,0.35")
     ap.add_argument("--frictions", type=parse_levels, default=[0.20, 0.30, 0.40],

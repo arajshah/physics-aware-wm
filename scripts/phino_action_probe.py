@@ -27,6 +27,8 @@ import itertools
 import json
 import sys
 from pathlib import Path
+
+from phino_paths import default_phino_root
 from typing import Any, Callable
 
 import numpy as np
@@ -404,7 +406,7 @@ def main() -> None:
     e.add_argument("--checkpoint", type=Path, default=None)
     e.add_argument("--data-dir", type=Path, default=DEFAULT_DATA)
     e.add_argument("--features-dir", type=Path, default=DEFAULT_FEATURES)
-    e.add_argument("--phino-root", type=Path, default=Path("/nbu/people/ashah264/phino"))
+    e.add_argument("--phino-root", type=Path, default=default_phino_root())
     e.add_argument("--batch-size", type=int, default=256)
     e.add_argument("--grid", action="store_true", help="spatial 4x4 pooled patch-token readout")
     v = sub.add_parser("evaluate")

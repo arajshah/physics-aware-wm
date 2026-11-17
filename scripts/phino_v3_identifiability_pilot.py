@@ -7,7 +7,7 @@ No images are rendered, no models are trained, no full grid is written.
 
     python scripts/phino_v3_identifiability_pilot.py \
         --grid-dir results/phino_mesh_grid_cutoff_1m_v1 \
-        --phino-root /nbu/people/ashah264/phino \
+        --phino-root external/phino \
         --output-dir results/phino_v3_identifiability_pilot_v1
 
 Per geometry it simulates the 3x3 grid, 4 off-grid points, and central

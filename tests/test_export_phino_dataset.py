@@ -1,7 +1,7 @@
 """Synthetic-fixture tests for scripts/export_phino_dataset.py.
 
-Validation tests need only numpy. Export tests need a PHINO checkout (PHINO_ROOT
-env var, the Brown default path, or a sibling ``phino`` directory); the
+Validation tests need only numpy. Export tests need a PHINO checkout (the
+``external/phino`` submodule, ``PHINO_ROOT``, or a sibling ``phino`` directory); the
 dataloader smoke test additionally needs torch/torchvision, and the renderer test
 needs MuJoCo with a working offscreen GL backend.
 """
@@ -24,8 +24,18 @@ MASSES = (0.30, 0.35)
 FRICTIONS = (0.20, 0.40)
 
 
+def test_default_phino_root_prefers_submodule():
+    bundled = Path(__file__).resolve().parents[1] / "external" / "phino"
+    marker = bundled / "train" / "data" / "mujoco_engine.py"
+    if marker.is_file():
+        assert ex.DEFAULT_PHINO_ROOT.resolve() == bundled.resolve()
+    else:
+        assert ex.DEFAULT_PHINO_ROOT.name == "phino"
+
+
 def _find_phino_root() -> Path | None:
-    candidates = [os.environ.get("PHINO_ROOT"), ex.DEFAULT_PHINO_ROOT,
+    bundled = Path(__file__).resolve().parents[1] / "external" / "phino"
+    candidates = [os.environ.get("PHINO_ROOT"), ex.DEFAULT_PHINO_ROOT, bundled,
                   Path(__file__).resolve().parents[2] / "phino"]
     for c in candidates:
         if c and (Path(c) / "train" / "data" / "mujoco_engine.py").is_file():

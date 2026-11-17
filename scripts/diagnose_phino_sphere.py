@@ -22,6 +22,7 @@ from pathlib import Path
 import numpy as np
 
 import phino_simpact_pilot_v2 as pilot
+from phino_paths import default_phino_root
 
 
 def simulate_diagnostic(obj, action, originals, engine, mj, *, cutoff, tilt_cap,
@@ -112,7 +113,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--scene", type=Path,
                     default=Path("results/phino_mesh_scenes_v1/object_sphere/scene.xml"))
-    ap.add_argument("--phino-root", type=Path, default=Path("/nbu/people/ashah264/phino"))
+    ap.add_argument("--phino-root", type=Path, default=default_phino_root())
     ap.add_argument("--output-dir", type=Path,
                     default=Path("results/phino_sphere_diagnostics_v1"))
     ap.add_argument("--masses", type=pilot.parse_levels, default=[0.25, 0.30, 0.35])

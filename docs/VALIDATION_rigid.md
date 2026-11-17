@@ -18,7 +18,7 @@ golden `_6d_cam{id}.txt` pose).
 > in the November teammate audit. A later execution log for the committed
 > example is on Brown at `results/rigid_0103.log` (NVIDIA L40,
 > `RIGID_PIPELINE_OK`, peak 18.74 GB). Setup and what was rechecked on
-> 2026-11-16 are in [TEAM_HANDOFF.md](TEAM_HANDOFF.md).
+> 2026-11-16 are in the repository README.
 
 ## Prerequisite gate — FoundationPose weights (to be provided)
 

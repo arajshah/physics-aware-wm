@@ -21,6 +21,8 @@ import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from phino_paths import default_phino_root
+
 import numpy as np
 
 
@@ -589,8 +591,7 @@ def run_action_diagnostics(argv=None):
                    default=Path("results/phino_calibration/calibration.json"))
     p.add_argument("--prior-sweep", type=Path,
                    default=Path("results/phino_calibration/physics_sweep.json"))
-    p.add_argument("--phino-root", type=Path,
-                   default=Path("/nbu/people/ashah264/phino"))
+    p.add_argument("--phino-root", type=Path, default=default_phino_root())
     p.add_argument("--out", type=Path, default=None,
                    help="Custom output folder. By default, flick-focus gets its own subfolder.")
     p.add_argument("--flick-focus", action="store_true",

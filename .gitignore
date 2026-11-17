@@ -232,12 +232,13 @@ __marimo__/
 # Claude Code local overrides (machine-specific)
 .claude/settings.local.json
 
-# in-repo copies of external model repos (built locally, not tracked)
-external/
+# Third-party model checkouts and weights (SAM-3D, FoundationPose, SAM2).
+# The PHINO source pin is a submodule and is the only tracked path here.
+/external/*
+!/external/phino
 
 # Generated experiment outputs (grids, checkpoints, logs, perception dumps).
 # Summaries that belong in Git live under docs/results/.
-# Inventory: docs/BROWN_ARTIFACT_MANIFEST.md
 /results/
 
 # MuJoCo runtime log written into the repo root

@@ -13,6 +13,8 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+from phino_paths import default_phino_root
+
 import mujoco
 import numpy as np
 
@@ -23,8 +25,7 @@ def main():
                         default=Path("results/rigid_0103/scene.xml"))
     parser.add_argument("--output-dir", type=Path,
                         default=Path("results/phino_pilot"))
-    parser.add_argument("--phino-root", type=Path,
-                        default=Path("/nbu/people/ashah264/phino"))
+    parser.add_argument("--phino-root", type=Path, default=default_phino_root())
     parser.add_argument("--force-scale", type=float, default=1.0,
                         help="Scale PHINO's forces and torques (1.0 = original)")
     parser.add_argument("--max-displacement", type=float, default=0.5,

@@ -5,7 +5,7 @@ From the SIMPACT repository root, with the project environment:
     python scripts/export_phino_dataset.py --validate-only
     python scripts/export_phino_dataset.py \
         --grid-dir results/phino_mesh_grid_cutoff_1m_v1 \
-        --phino-root /nbu/people/ashah264/phino \
+        --phino-root external/phino \
         --output-dir data/phino_simpact_v0
 
 Output layout (each split directory is a self-contained PHINO ``data_dir``):
@@ -49,6 +49,7 @@ from typing import Any, Callable
 
 import numpy as np
 
+import phino_paths
 import phino_simpact_pilot_v2 as pilot
 
 EXPORT_FORMAT = "simpact_phino_contrastive_export_v0"
@@ -63,7 +64,7 @@ SPLITS = ("train", "heldout")
 RESTITUTION_PLACEHOLDER = 0.0
 MIN_OBJECT_PIXEL_FRACTION = 0.02
 MIN_IMAGE_STD = 2.0
-DEFAULT_PHINO_ROOT = Path("/nbu/people/ashah264/phino")
+DEFAULT_PHINO_ROOT = phino_paths.default_phino_root()
 
 LABEL_MAPPING = {
     "mass": "SIMPACT record mass_kg: simulator-assigned body mass, not measured.",

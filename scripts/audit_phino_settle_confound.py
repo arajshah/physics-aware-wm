@@ -5,7 +5,7 @@ From the SIMPACT repository root:
     MUJOCO_GL=egl python scripts/audit_phino_settle_confound.py \
         --grid-dir results/phino_mesh_grid_cutoff_1m_v1 \
         --export-dir data/phino_simpact_v0 \
-        --phino-root /nbu/people/ashah264/phino \
+        --phino-root external/phino \
         --output-dir results/phino_settle_audit_v1
 
 No grid data are regenerated. MuJoCo is used only to (a) recompute each

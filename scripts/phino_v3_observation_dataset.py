@@ -4,7 +4,11 @@
     MUJOCO_GL=egl python scripts/phino_v3_observation_dataset.py \
         --pilot-dir results/phino_v3_identifiability_pilot_v1 \
         --grid-dir results/phino_mesh_grid_cutoff_1m_v1 \
-        --output-dir data/phino_simpact_v3obs_v1
+        --output-dir data/phino_simpact_v3obs_v2
+
+The validated export is ``data/phino_simpact_v3obs_v2``. Do not train on
+``data/phino_simpact_v3obs_v1``: that run leaked friction through sub-0.1 mm
+start offsets.
 
 No new physics: every image is a kinematic replay of a saved Stage 3 trace
 (start-relative position and rotation) from that configuration's common start.

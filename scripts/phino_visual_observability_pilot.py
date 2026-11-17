@@ -4,7 +4,7 @@
 From the SIMPACT repository root, with the project environment:
     MUJOCO_GL=egl python scripts/phino_visual_observability_pilot.py \
         --grid-dir results/phino_mesh_grid_cutoff_1m_v1 \
-        --phino-root /nbu/people/ashah264/phino \
+        --phino-root external/phino \
         --output-dir results/phino_visual_observability_v1
 
 No physics is regenerated. Every image is a kinematic replay of a SAVED valid

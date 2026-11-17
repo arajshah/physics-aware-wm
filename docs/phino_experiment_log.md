@@ -1,6 +1,6 @@
 # SIMPACT → PHINO experiment log
 
-Reproducible experiments only. Current project state lives in [`phino_cursor_handoff.md`](./phino_cursor_handoff.md).
+Reproducible experiments only. Setup and the result summary are in the repository README.
 
 ## 2026-11-05 — v0 PHINO dataset export and dataloader smoke test
 

@@ -23,11 +23,13 @@ from __future__ import annotations
 
 import argparse
 import copy
-from collections import defaultdict
 import json
 import sys
 import xml.etree.ElementTree as ET
+from collections import defaultdict
 from pathlib import Path
+
+from phino_paths import default_phino_root
 
 import mujoco
 import numpy as np
@@ -228,7 +230,7 @@ def calibrate_forces(argv=None):
     ap.add_argument("--scene", type=Path,
                     default=Path("results/rigid_0103/scene.xml"))
     ap.add_argument("--phino-root", type=Path,
-                    default=Path("/nbu/people/ashah264/phino"))
+                    default=default_phino_root())
     ap.add_argument("--output-dir", type=Path,
                     default=Path("results/phino_calibration"))
     ap.add_argument("--reference-mass", type=float, default=0.3)
@@ -597,7 +599,7 @@ def validate_physics(argv=None):
     ap.add_argument("--scene", type=Path,
                     default=Path("results/rigid_0103/scene.xml"))
     ap.add_argument("--phino-root", type=Path,
-                    default=Path("/nbu/people/ashah264/phino"))
+                    default=default_phino_root())
     ap.add_argument("--output-dir", type=Path,
                     default=Path("results/phino_calibration"))
     ap.add_argument("--calibration", type=Path, default=None,

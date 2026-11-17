@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "simpact"
 version = "0.1.0"
-description = "SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models (CVPR 2026) — official implementation"
+description = "SIMPACT simulation stack and physics-aware representation experiments. PHINO is the external/phino submodule."
 requires-python = ">=3.10"
 dependencies = [
     "numpy",

@@ -1,3 +1,5 @@
+> Historical snapshot from 2026-11-05. Current setup and results are in the repository README. The experiment record is `docs/phino_experiment_log.md`.
+
 # MASTER HANDOFF: Brown Research Project, SIMPACT → PHINO
 ## Research Context, Engineering State, Scientific Objectives, and Cursor Agent Operating Instructions
 

@@ -38,6 +38,7 @@ import numpy as np
 
 import phino_action_objectives as objectives
 import phino_action_probe as probe
+from phino_paths import default_phino_root
 
 AUG_SHIFT = 6
 AUG_JITTER = 0.10
@@ -56,7 +57,7 @@ def preload(data_dir: Path, rows: list[dict]) -> dict[str, np.ndarray]:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--data-dir", type=Path, default=probe.DEFAULT_DATA)
-    ap.add_argument("--phino-root", type=Path, default=Path("/nbu/people/ashah264/phino"))
+    ap.add_argument("--phino-root", type=Path, default=default_phino_root())
     ap.add_argument("--test-geometry", required=True, help="geometry_short excluded from training")
     ap.add_argument("--objective", choices=("trajectory", "instance", "regression"), default="trajectory")
     ap.add_argument("--mode", choices=("clip", "static"), default="clip")
